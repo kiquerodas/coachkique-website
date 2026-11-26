@@ -54,3 +54,188 @@
  .about-banner{padding-top:54vw}
  .about-banner .stat-grid div{padding:15px 12px}
 }
+
+
+/* V6 — training philosophy: original user photo as an editorial background. */
+.approach.approach-brochure{position:relative;isolation:isolate;overflow:hidden;min-height:740px;padding:95px 0 105px;background:#071728}
+.approach-brochure-background{position:absolute;inset:0;z-index:-2;background-image:url("assets/training-background.webp");background-size:cover;background-position:center 39%;filter:grayscale(1) contrast(1.1)}
+.approach-brochure::after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(90deg,rgba(4,15,29,.12) 0%,rgba(4,15,29,.42) 43%,rgba(4,15,29,.91) 69%,rgba(4,15,29,.91) 100%),linear-gradient(0deg,rgba(4,13,28,.82),transparent 30%,rgba(4,13,28,.3) 100%)}
+.approach-brochure-content{min-height:540px;display:flex;justify-content:flex-end;align-items:center}
+.approach-brochure-copy{width:min(670px,59%);text-align:right;text-shadow:0 2px 15px #000b}
+.approach-brochure-copy .kicker{margin:0 0 12px;color:#80dfff}
+.approach-brochure-copy h2{font-size:clamp(42px,5vw,76px);margin:0 0 30px;line-height:1.03}
+.approach-brochure-copy .approach-lead{font-size:clamp(18px,2vw,24px);line-height:1.45;color:#fff;max-width:520px;margin:0 0 20px auto;font-style:italic}
+.approach-brochure-copy .approach-detail{font-size:17px;color:#eff7ff;max-width:460px;margin:0 0 30px auto;padding-right:17px;border-right:4px solid #18c7fa}
+.approach-brochure-copy .distance-row{justify-content:flex-end;gap:7px;margin:27px 0 23px}
+.approach-brochure-copy .distance-row span{font-size:clamp(22px,2.7vw,35px);background:rgba(3,19,40,.66);border:1px solid #26cbfb;padding:7px 12px}
+.approach-brochure-copy blockquote{border-left:0;border-right:4px solid var(--sky);padding:0 17px 0 0;font-size:20px;max-width:490px;margin-left:auto;color:#fff}
+@media(max-width:900px){.approach-brochure-copy{width:68%}.approach-brochure::after{background:linear-gradient(90deg,rgba(4,15,29,.1) 0%,rgba(4,15,29,.6) 40%,rgba(4,15,29,.94) 100%)}}
+@media(max-width:720px){.approach.approach-brochure{min-height:760px;padding:60px 0 70px}.approach-brochure-background{background-position:34% center}.approach-brochure::after{background:linear-gradient(0deg,rgba(4,14,27,.98) 0%,rgba(4,14,27,.9) 40%,rgba(4,14,27,.45) 76%,rgba(4,14,27,.12) 100%)}.approach-brochure-content{align-items:flex-end;min-height:630px}.approach-brochure-copy{width:100%;text-align:left}.approach-brochure-copy h2{font-size:clamp(42px,10vw,60px)}.approach-brochure-copy .approach-lead,.approach-brochure-copy .approach-detail{margin-left:0}.approach-brochure-copy .approach-detail{border-right:0;border-left:4px solid var(--sky);padding:0 0 0 14px}.approach-brochure-copy .distance-row{justify-content:flex-start}.approach-brochure-copy .distance-row span{font-size:25px}.approach-brochure-copy blockquote{margin-left:0;border-right:0;border-left:4px solid var(--sky);padding:0 0 0 15px}}
+@media(max-width:420px){.approach.approach-brochure{min-height:880px}.approach-brochure-content{min-height:750px}.approach-brochure-copy h2{font-size:43px}.approach-brochure-copy .distance-row span{font-size:23px;padding:6px 9px}}
+
+/* V7: mobile brochure-style hero — overlay copy on the photograph, not below it. */
+@media (max-width:800px) {
+  .hero {
+    background-image:linear-gradient(90deg,rgba(3,13,30,.88) 0%,rgba(3,13,30,.63) 61%,rgba(3,13,30,.18) 100%),url("assets/hero-segment.png");
+    background-size:cover;
+    background-position:68% center;
+    background-repeat:no-repeat;
+  }
+  .hero-grid {min-height:min(920px,100svh);padding-top:0;display:flex;align-items:center;justify-content:center;}
+  .hero-copy {width:100%;max-width:570px;margin:0;padding:70px 0 60px;background:transparent;text-shadow:0 2px 12px rgba(0,0,0,.9);}
+  .hero h1 {font-size:clamp(55px,12.5vw,80px);}
+  .hero-description {color:#fff;max-width:425px;}
+  .hero-tagline {background:rgba(0,52,107,.74);}
+  .about-banner {
+    background-image:linear-gradient(90deg,rgba(3,13,30,.9),rgba(3,13,30,.35)),url("assets/coach-segment.png");
+    background-size:cover;
+    background-position:68% center;
+    padding:70px 0;
+  }
+  .about-banner .split-grid {min-height:660px;display:flex;align-items:center;}
+  .about-banner .split-grid>.reveal {width:100%;background:transparent;padding:0;text-shadow:0 2px 13px #000;}
+}
+@media (max-width:470px) {
+  .hero-grid {min-height:760px;padding-top:0;}
+  .hero-copy {padding:55px 0 60px;}
+  .hero h1 {font-size:clamp(49px,12.5vw,65px);}
+  .hero-actions {max-width:310px;}
+  .hero-description {max-width:330px;}
+  .mini-stats {gap:12px;}
+  .about-banner {padding:60px 0;}
+  .about-banner .split-grid {min-height:680px;}
+}
+
+/* V8 — ensure BOTH subsequent editorial sections are image/text overlays on phones. */
+@media (max-width:800px) {
+  #coach.about-banner {
+    position:relative;
+    isolation:isolate;
+    background:#06182f url("assets/coach-segment.png") 68% center/cover no-repeat;
+    min-height:740px;
+    padding:60px 0;
+    display:flex;
+    align-items:center;
+  }
+  #coach.about-banner::before {
+    content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+    background:linear-gradient(90deg,rgba(3,12,28,.91),rgba(3,12,28,.65) 63%,rgba(3,12,28,.24));
+  }
+  #coach.about-banner .split-grid {
+    position:relative;z-index:1;display:block;min-height:0;width:min(100% - 44px,670px);
+  }
+  #coach.about-banner .split-grid>.reveal {
+    position:relative;width:100%;max-width:550px;margin:0;padding:0;background:transparent;
+    text-shadow:0 2px 12px rgba(0,0,0,.7);
+  }
+  #coach.about-banner .stat-grid div {background:rgba(4,27,51,.78)}
+  #enfoque.approach-brochure {position:relative;min-height:760px;padding:65px 0;display:flex;align-items:center;}
+  #enfoque .approach-brochure-background {inset:0;background-position:35% center;}
+  #enfoque.approach-brochure::after {
+    background:linear-gradient(90deg,rgba(3,13,27,.88),rgba(3,13,27,.55)),linear-gradient(0deg,rgba(3,13,27,.82),transparent 90%);
+  }
+  #enfoque .approach-brochure-content {position:relative;z-index:2;min-height:0;display:block;}
+  #enfoque .approach-brochure-copy {width:100%;max-width:590px;text-align:left;margin:0;}
+  #enfoque .approach-brochure-copy .distance-row {justify-content:flex-start;}
+}
+@media (max-width:470px) {
+  #coach.about-banner {min-height:780px;padding:55px 0;}
+  #coach.about-banner .split-grid {width:calc(100% - 44px);}
+  #coach.about-banner h2 {font-size:clamp(42px,12vw,59px);}
+  #enfoque.approach-brochure {min-height:840px;padding:65px 0;}
+  #enfoque .approach-brochure-copy h2 {font-size:clamp(40px,10.5vw,52px);}
+}
+
+
+/* V9 — brochure-inspired methodology: photo above each training discipline.
+   Scoped to #metodo; approved V8 responsive photo overlays stay untouched. */
+#metodo .method-grid {grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;align-items:stretch}
+#metodo .method-card {padding:0;min-height:0;overflow:hidden;border-top:0;border-bottom:3px solid #17b8f2;background:linear-gradient(155deg,#123b5f,#071c30)}
+#metodo .method-photo {height:200px;position:relative;overflow:hidden;background:#0b2541;flex:none}
+#metodo .method-photo:after {content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(0deg,rgba(5,21,37,.32),transparent 50%)}
+#metodo .method-photo img {width:100%;height:100%;display:block;object-fit:cover;transition:transform .5s ease}
+#metodo .method-card:hover .method-photo img {transform:scale(1.04)}
+#metodo .method-card-content {padding:24px 22px 22px;display:flex;flex-direction:column;flex:1}
+#metodo .method-card-content .method-icon {font-size:35px;line-height:1;color:#17c9ff}
+#metodo .method-card-content h3 {font-size:clamp(27px,2.5vw,35px);margin:17px 0 11px}
+#metodo .method-card-content p {font-size:13px;line-height:1.55;color:#d8eafa;margin:0}
+#metodo .method-card-content>span {margin-top:auto;padding-top:22px;color:#ffb46e;font-size:10px;font-weight:800;letter-spacing:.12em}
+@media(max-width:950px){#metodo .method-grid{grid-template-columns:repeat(2,minmax(0,1fr))}#metodo .method-photo{height:240px}}
+@media(max-width:550px){#metodo .method-grid{grid-template-columns:1fr;gap:20px}#metodo .method-photo{height:225px}#metodo .method-card-content{padding:22px 22px 25px}#metodo .method-card-content h3{font-size:36px}}
+@media(prefers-reduced-motion:reduce){#metodo .method-photo img{transition:none}}
+
+
+/* V10 — Un plan que crece contigo: editorial black-and-white photo with readable text overlay. */
+.benefits.benefits-photo{
+ position:relative;isolation:isolate;overflow:hidden;
+ background:#061729;min-height:710px;display:flex;align-items:center;
+}
+.benefits.benefits-photo::before{
+ content:"";position:absolute;inset:0;z-index:-2;pointer-events:none;
+ background:url("assets/plan-crece-boston.webp") center 32%/cover no-repeat;
+ filter:grayscale(1) contrast(1.12) brightness(.85);
+}
+.benefits.benefits-photo::after{
+ content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+ background:linear-gradient(90deg,rgba(3,15,29,.98) 0%,rgba(3,15,29,.93) 32%,rgba(3,15,29,.56) 59%,rgba(3,15,29,.10) 100%),linear-gradient(0deg,rgba(3,15,29,.55),transparent 35%);
+}
+.benefits-photo .benefits-grid{display:block;position:relative;z-index:1}
+.benefits-photo .benefits-grid>.reveal{max-width:630px;text-shadow:0 2px 12px #0008}
+.benefits-photo .benefit-list>div{background:rgba(3,19,38,.3);border-bottom:1px solid #5aa7d066;padding:17px 12px}
+.benefits-photo .benefit-list strong{color:#fff}
+.benefits-photo .benefit-list small{color:#e0edfa}
+.benefits-photo .benefit-list i{color:#30caff}
+@media(max-width:760px){
+ .benefits.benefits-photo{min-height:790px;padding:76px 0 65px;align-items:flex-end}
+ .benefits.benefits-photo::before{background-position:54% top}
+ .benefits.benefits-photo::after{background:linear-gradient(0deg,rgba(3,14,27,.98) 0%,rgba(3,14,27,.94) 41%,rgba(3,14,27,.70) 66%,rgba(3,14,27,.23) 100%)}
+ .benefits-photo .benefits-grid>.reveal{max-width:100%}
+ .benefits-photo .benefit-list>div{padding:15px 8px}
+}
+@media(max-width:470px){
+ .benefits.benefits-photo{min-height:880px;padding:70px 0 45px}
+ .benefits.benefits-photo::before{background-position:52% top}
+ .benefits-photo h2{font-size:clamp(46px,12vw,65px);line-height:1.01}
+ .benefits-photo .benefit-list small{font-size:12px}
+}
+
+/* V11 · Portrait placeholders for the six runner stories. */
+#historias .stories-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:34px}
+#historias .story.story-with-portrait{display:grid;grid-template-columns:minmax(125px,38%) minmax(0,1fr);gap:0;min-height:250px;padding:0;overflow:hidden;border:1px solid #29567b;background:linear-gradient(140deg,#103354,#061b30);border-left:4px solid #0cbafa}
+#historias .story-portrait{height:100%;min-height:250px;background:#071728;position:relative;overflow:hidden}
+#historias .story-portrait:after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(0deg,rgba(4,16,31,.62),transparent 45%)}
+#historias .story-portrait img{display:block;width:100%;height:100%;object-fit:cover;filter:grayscale(1)}
+#historias .story-content{display:flex;flex-direction:column;min-width:0;padding:26px 22px 23px}
+#historias .story-content h3{font-size:clamp(31px,3vw,41px);margin:12px 0}
+#historias .story-content p{font-size:13px;line-height:1.6;margin-bottom:16px}
+#historias .story-content strong{font-size:12px;line-height:1.4}
+#historias .story-portrait-note{font-size:12px;color:#9fb6c9;margin-top:19px;max-width:800px}
+@media(max-width:750px){#historias .stories-grid{grid-template-columns:1fr}#historias .story.story-with-portrait{grid-template-columns:38% 1fr;min-height:230px}#historias .story-portrait{min-height:230px}}
+@media(max-width:390px){#historias .story.story-with-portrait{grid-template-columns:36% 1fr}#historias .story-content{padding:18px 14px}#historias .story-content h3{font-size:29px}#historias .story-content p{font-size:12px}}
+
+
+/* V12 · Background photos as soft watermarks behind live readable copy.
+   Keep actual foreground card photos and community photo clear and crisp. */
+.hero{
+  background-image:linear-gradient(90deg,rgba(2,13,32,.90) 0%,rgba(2,13,32,.78) 48%,rgba(2,13,32,.50) 100%),url("assets/hero-segment.png");
+  background-size:cover;background-position:center center;
+}
+#coach.about-banner{
+  background-image:linear-gradient(90deg,rgba(2,13,32,.93) 0%,rgba(2,13,32,.80) 53%,rgba(2,13,32,.48) 100%),url("assets/coach-segment.png");
+  background-size:cover;background-position:center center;
+}
+#enfoque .approach-brochure-background{opacity:.43;filter:grayscale(1) contrast(.93)}
+#enfoque.approach-brochure::after{
+  background:linear-gradient(90deg,rgba(4,15,29,.53),rgba(4,15,29,.85) 57%,rgba(4,15,29,.95));
+}
+.benefits.benefits-photo::before{opacity:.40;filter:grayscale(1) contrast(.90)}
+.benefits.benefits-photo::after{
+ background:linear-gradient(90deg,rgba(3,15,29,.97),rgba(3,15,29,.88) 57%,rgba(3,15,29,.57));
+}
+#metodo .method-photo img[src$="metodo-community-real.webp"]{object-position:center 54%;}
+@media(max-width:800px){
+  .hero{background-image:linear-gradient(90deg,rgba(2,13,32,.88),rgba(2,13,32,.70)),url("assets/hero-segment.png");background-position:68% center}
+  #coach.about-banner{background-image:linear-gradient(90deg,rgba(2,13,32,.90),rgba(2,13,32,.68)),url("assets/coach-segment.png");background-position:68% center}
+  #enfoque.approach-brochure::after{background:linear-gradient(0deg,rgba(3,13,27,.97),rgba(3,13,27,.85) 55%,rgba(3,13,27,.53));}
+  .benefits.benefits-photo::after{background:linear-gradient(0deg,rgba(3,14,27,.98),rgba(3,14,27,.90) 52%,rgba(3,14,27,.55));}
+}
