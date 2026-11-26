@@ -1,23 +1,33 @@
-# Coach Kique Running — Website V2
+# Coach Kique Running — Website V1
 
-Sitio web estático listo para GitHub Pages. Se actualizó la V1 para usar las **13 fotografías originales** del usuario y mantener la línea gráfica del brochure.
+Sitio estático responsive inspirado directamente en el brochure de 7 páginas de Coach Kique Running.
 
-## Publicación
-1. Crear repositorio público `coachkique-website` en GitHub.
-2. Extraer el ZIP, **abrir la carpeta `Coach_Kique_Website_V2`** y subir `index.html`, `styles.css`, `script.js` y la carpeta `assets/` directamente a la **raíz** del repositorio.
-3. En Settings → Pages, elegir Deploy from a branch → main → /(root), Save.
-4. El sitio estará en https://kiquerodas.github.io/coachkique-website/ .
+## Publicar con GitHub Pages
 
-## Contenido y verificación previa a publicación
-- Incluye fotografías de grupo; **confirmar autorización de las personas retratadas** antes de publicar.
-- Los seis perfiles de 'Historias' proceden del brochure y se identifican como **ilustrativos, no testimonios verificados**. Reemplazarlos por testimonios reales autorizados antes de presentarlos como opiniones de clientes.
-- Contacto: formulario tipo `mailto:` que prepara un correo a coolrunnersgt@gmail.com. No almacena respuestas automáticamente.
-- Enlaces hacia https://kiquerodas.github.io/coolrunners-website/ y hacia Instagram @coachkique.
-- La imagen social Open Graph apunta a `assets/og-cover.jpg`.
-- Diseño adaptable a móvil y escritorio; animaciones respetan `prefers-reduced-motion`.
+1. Cree un repositorio público llamado `coachkique-website` en la cuenta GitHub `kiquerodas`.
+2. Suba `index.html`, `styles.css`, `script.js` y la carpeta completa `assets/` a la raíz del repositorio.
+3. Vaya a **Settings → Pages → Deploy from a branch → main → /(root)** y guarde.
+4. Una vez publicado, el sitio estará en `https://kiquerodas.github.io/coachkique-website/`.
+5. En el sitio CoolRunners, cambie el enlace de **Coaching** o agregue un botón **Conoce Coach Kique** con esa URL. Desde Coach Kique ya existe un enlace de regreso a CoolRunners.
 
-## Archivos
-- `index.html`: contenido y estructura
-- `styles.css`: diseño y adaptación responsive
-- `script.js`: navegación, animaciones y mailto
-- `assets/`: fotografías optimizadas en WebP y materiales de diseño de V1
+## Contenido y diseño
+
+- Textos, testimonios y cifras adaptados del brochure entregado el 25/11/2026.
+- El brochure se utilizó como material visual. Las imágenes recortadas contienen fotografías del diseño original, sin inventar rostros nuevos.
+- Los seis testimonios se presentan en forma breve; el brochure original puede consultarse desplegando la sección.
+- Entrenamiento personalizado: Q500 primer mes; Q400 siguientes. Comunidad CoolRunners: sin costo.
+
+## Formulario de contacto
+
+La consulta usa `mailto:`: abre el cliente de correo con un borrador prellenado dirigido a `coolrunnersgt@gmail.com`. **No almacena ni envía automáticamente consultas**. Si se desea una versión que guarde mensajes en Google Sheets, será necesario integrar y probar un backend aparte.
+
+## Antes de publicar
+
+- Revise y confirme que los testimonios y las fotografías tengan autorización para exhibirse públicamente.
+- Verifique el correo público de contacto y las tarifas.
+- Pruebe el comportamiento en teléfono y escritorio.
+- No suba secretos, tokens ni credenciales al repositorio público.
+
+
+## V3 — Portada y Conoce a tu coach
+Las dos primeras secciones ahora usan collages fotográficos: fotografía principal a color y fotos de fondo desaturadas/azules. No necesitan archivos nuevos; todos los recursos están en assets/. Para actualizar V2 se pueden reemplazar únicamente index.html y styles.css.

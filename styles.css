@@ -8,3 +8,37 @@
 @media(max-width:800px){.gallery-heading{display:block}.photo-gallery{grid-template-columns:repeat(2,minmax(0,1fr))}.photo-break{min-height:440px}.photo-break-text{padding:70px 0 55px}}
 @media(max-width:470px){.photo-gallery{gap:8px}.gallery-item{min-height:160px;aspect-ratio:3/4}.gallery-item.g-wide{aspect-ratio:4/3}.gallery-item figcaption{font-size:11px;padding:26px 10px 10px}.photo-break>img{object-position:58% center}.photo-break-shade{background:linear-gradient(0deg,#061727e8 0%,#06172755 90%)}.hero-caption{left:14%;top:50px}.photo-break-text h2{font-size:55px}}
 @media(prefers-reduced-motion:reduce){.gallery-item img{transition:none}}
+
+/* V3: editorial photo collages in the first two sections, based on the brochure. */
+.hero-collage{isolation:isolate;overflow:hidden;min-height:655px}
+.hero-collage .hero-watermark{position:absolute;left:0;width:60%;overflow:hidden;z-index:0;background:#102b48;filter:grayscale(1) sepia(.3) hue-rotate(165deg) saturate(1.8);opacity:.67}
+.hero-collage .hero-watermark img{width:100%;height:100%;object-fit:cover;display:block}
+.hero-collage .hero-watermark-top{top:0;height:48%;clip-path:polygon(0 0,100% 0,76% 100%,0 100%)}
+.hero-collage .hero-watermark-bottom{top:45%;height:55%;clip-path:polygon(0 13%,73% 0,100% 100%,0 100%)}
+.hero-collage .hero-watermark:after{content:'';position:absolute;inset:0;background:#0065bf55;mix-blend-mode:multiply}
+.hero-collage .hero-photo{inset:2% -5% 0 34%;clip-path:polygon(18% 0,100% 0,100% 100%,0 100%);mask-image:none;z-index:2}
+.hero-collage .hero-photo img{object-position:50% 23%;filter:saturate(1.14) contrast(1.08)}
+.hero-collage:after{z-index:3;background:linear-gradient(0deg,#071629d9 0%,transparent 22%)}
+.hero-slice{pointer-events:none;position:absolute;background:#0899fc;z-index:4;transform:rotate(24deg);transform-origin:center}
+.hero-slice-first{width:9px;height:125%;left:48%;top:-12%}
+.hero-slice-second{height:5px;width:80%;top:46%;left:-15%;transform:rotate(-10deg)}
+.about-collage{isolation:isolate;clip-path:polygon(0 0,100% 0,100% 95%,92% 100%,0 100%);min-height:620px;background:linear-gradient(135deg,#092745,#061522)}
+.about-collage .about-watermark{position:absolute;inset:0 40% 0 0;z-index:0;overflow:hidden;filter:grayscale(1) sepia(.2) hue-rotate(164deg);opacity:.68}
+.about-collage .about-watermark img{height:100%;width:100%;object-fit:cover;object-position:48% center}
+.about-collage .about-focus{position:absolute;inset:0 0 0 28%;z-index:1;overflow:hidden;clip-path:polygon(26% 0,100% 0,100% 100%,0 100%)}
+.about-collage .about-focus img{width:100%;height:100%;object-fit:cover;object-position:center top}
+.about-collage .about-photo-accent{position:absolute;z-index:2;inset:0 auto 0 49%;width:7px;background:#039af8;transform:skew(-15deg);opacity:.87}
+.about-collage .photo-note{z-index:4;font-size:clamp(20px,2.6vw,30px);text-shadow:0 2px 8px #000c;background:linear-gradient(transparent,#061629e8 58%)}
+@media(max-width:720px){
+  .hero-collage{min-height:440px;height:440px}
+  .hero-collage .hero-photo{inset:0 -3% 0 31%}
+  .hero-collage .hero-watermark{width:63%}
+  .hero-slice-first{left:49%}
+  .hero-collage:after{background:linear-gradient(0deg,#071629 0%,transparent 32%)}
+  .about-collage{min-height:475px;max-height:475px}
+  .about-collage .about-focus{inset:0 0 0 23%}
+  .about-collage .about-watermark{inset:0 36% 0 0}
+  .about-collage .about-photo-accent{left:47%}
+}
+@media(max-width:470px){.hero-collage{min-height:390px;height:390px}.about-collage{min-height:425px;max-height:425px}.about-collage .photo-note{font-size:23px;padding-bottom:25px}}
+@media(prefers-reduced-motion:reduce){.hero-collage,.about-collage{scroll-behavior:auto}}
