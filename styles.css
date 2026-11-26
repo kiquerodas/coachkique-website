@@ -42,3 +42,48 @@
 }
 @media(max-width:470px){.hero-collage{min-height:390px;height:390px}.about-collage{min-height:425px;max-height:425px}.about-collage .photo-note{font-size:23px;padding-bottom:25px}}
 @media(prefers-reduced-motion:reduce){.hero-collage,.about-collage{scroll-behavior:auto}}
+
+
+/* V4 — unobstructed hero portraits with subdued monochrome memories behind. */
+.hero-collage{position:relative;isolation:isolate;min-height:655px;background:#071629;overflow:hidden}
+.hero-collage .hero-watermark{left:0;width:68%;opacity:.68;filter:grayscale(1) contrast(1.1) sepia(.35) hue-rotate(170deg) saturate(1.5)}
+.hero-collage .hero-watermark-top{top:0;height:52%;clip-path:polygon(0 0,100% 0,100% 95%,0 100%)}
+.hero-collage .hero-watermark-bottom{top:48%;height:52%;clip-path:polygon(0 8%,100% 0,100% 100%,0 100%)}
+.hero-collage .hero-watermark:after{content:'';position:absolute;inset:0;background:#08274a66;mix-blend-mode:multiply}
+.hero-collage .hero-photo{
+  inset:0 -2% 0 28%;z-index:2;clip-path:none;
+  -webkit-mask-image:linear-gradient(to right,transparent 0%,#000 21%,#000 100%);
+  mask-image:linear-gradient(to right,transparent 0%,#000 21%,#000 100%);
+}
+.hero-collage .hero-photo img{object-fit:cover;object-position:50% 22%;filter:saturate(1.08) contrast(1.04)}
+.hero-collage:after{pointer-events:none;z-index:3;background:linear-gradient(to top,#071629af 0%,transparent 17%)}
+.hero-slice{display:none!important}
+/* Architectural accents stay on outer edges, never over a person. */
+.hero-collage:before{content:'';position:absolute;left:0;bottom:0;width:56%;height:5px;background:linear-gradient(90deg,#1087f2,#0ec6f4);z-index:5;transform:none}
+.about-collage{position:relative;isolation:isolate;min-height:620px;overflow:hidden;background:#08203b}
+.about-collage .about-watermark{inset:0 38% 0 0;z-index:0;opacity:.72;filter:grayscale(1) contrast(1.05) sepia(.33) hue-rotate(172deg)}
+.about-collage .about-focus{
+  inset:0 -1% 0 26%;z-index:1;clip-path:none;
+  -webkit-mask-image:linear-gradient(to right,transparent 0%,#000 24%,#000 100%);
+  mask-image:linear-gradient(to right,transparent 0%,#000 24%,#000 100%);
+}
+.about-collage .about-focus img{width:100%;height:100%;object-fit:cover;object-position:50% 8%}
+.about-collage .about-photo-accent{display:none!important}
+.about-collage .photo-note{z-index:4;max-width:100%;padding:74px 24px 24px;font-size:clamp(20px,2.5vw,28px);background:linear-gradient(transparent,#061629f2 65%)}
+.about-collage:after{content:'';position:absolute;bottom:0;right:0;width:31%;height:5px;background:linear-gradient(90deg,#0996fc,#04c3ed);z-index:5}
+@media(max-width:720px){
+ .hero-collage{min-height:460px;height:460px}
+ .hero-collage .hero-photo{inset:0 -2% 0 24%}
+ .hero-collage .hero-watermark{width:73%}
+ .hero-collage .hero-photo img{object-position:50% 20%}
+ .about-collage{min-height:480px;max-height:480px}
+ .about-collage .about-focus{inset:0 -1% 0 20%}
+ .about-collage .about-watermark{inset:0 35% 0 0}
+}
+@media(max-width:470px){
+ .hero-collage{min-height:410px;height:410px}
+ .hero-collage .hero-photo{inset:0 -3% 0 21%}
+ .about-collage{min-height:435px;max-height:435px}
+ .about-collage .about-focus{inset:0 -1% 0 18%}
+ .about-collage .photo-note{font-size:21px;padding-bottom:24px}
+}
