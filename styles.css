@@ -9,81 +9,48 @@
 @media(max-width:470px){.photo-gallery{gap:8px}.gallery-item{min-height:160px;aspect-ratio:3/4}.gallery-item.g-wide{aspect-ratio:4/3}.gallery-item figcaption{font-size:11px;padding:26px 10px 10px}.photo-break>img{object-position:58% center}.photo-break-shade{background:linear-gradient(0deg,#061727e8 0%,#06172755 90%)}.hero-caption{left:14%;top:50px}.photo-break-text h2{font-size:55px}}
 @media(prefers-reduced-motion:reduce){.gallery-item img{transition:none}}
 
-/* V3: editorial photo collages in the first two sections, based on the brochure. */
-.hero-collage{isolation:isolate;overflow:hidden;min-height:655px}
-.hero-collage .hero-watermark{position:absolute;left:0;width:60%;overflow:hidden;z-index:0;background:#102b48;filter:grayscale(1) sepia(.3) hue-rotate(165deg) saturate(1.8);opacity:.67}
-.hero-collage .hero-watermark img{width:100%;height:100%;object-fit:cover;display:block}
-.hero-collage .hero-watermark-top{top:0;height:48%;clip-path:polygon(0 0,100% 0,76% 100%,0 100%)}
-.hero-collage .hero-watermark-bottom{top:45%;height:55%;clip-path:polygon(0 13%,73% 0,100% 100%,0 100%)}
-.hero-collage .hero-watermark:after{content:'';position:absolute;inset:0;background:#0065bf55;mix-blend-mode:multiply}
-.hero-collage .hero-photo{inset:2% -5% 0 34%;clip-path:polygon(18% 0,100% 0,100% 100%,0 100%);mask-image:none;z-index:2}
-.hero-collage .hero-photo img{object-position:50% 23%;filter:saturate(1.14) contrast(1.08)}
-.hero-collage:after{z-index:3;background:linear-gradient(0deg,#071629d9 0%,transparent 22%)}
-.hero-slice{pointer-events:none;position:absolute;background:#0899fc;z-index:4;transform:rotate(24deg);transform-origin:center}
-.hero-slice-first{width:9px;height:125%;left:48%;top:-12%}
-.hero-slice-second{height:5px;width:80%;top:46%;left:-15%;transform:rotate(-10deg)}
-.about-collage{isolation:isolate;clip-path:polygon(0 0,100% 0,100% 95%,92% 100%,0 100%);min-height:620px;background:linear-gradient(135deg,#092745,#061522)}
-.about-collage .about-watermark{position:absolute;inset:0 40% 0 0;z-index:0;overflow:hidden;filter:grayscale(1) sepia(.2) hue-rotate(164deg);opacity:.68}
-.about-collage .about-watermark img{height:100%;width:100%;object-fit:cover;object-position:48% center}
-.about-collage .about-focus{position:absolute;inset:0 0 0 28%;z-index:1;overflow:hidden;clip-path:polygon(26% 0,100% 0,100% 100%,0 100%)}
-.about-collage .about-focus img{width:100%;height:100%;object-fit:cover;object-position:center top}
-.about-collage .about-photo-accent{position:absolute;z-index:2;inset:0 auto 0 49%;width:7px;background:#039af8;transform:skew(-15deg);opacity:.87}
-.about-collage .photo-note{z-index:4;font-size:clamp(20px,2.6vw,30px);text-shadow:0 2px 8px #000c;background:linear-gradient(transparent,#061629e8 58%)}
-@media(max-width:720px){
-  .hero-collage{min-height:440px;height:440px}
-  .hero-collage .hero-photo{inset:0 -3% 0 31%}
-  .hero-collage .hero-watermark{width:63%}
-  .hero-slice-first{left:49%}
-  .hero-collage:after{background:linear-gradient(0deg,#071629 0%,transparent 32%)}
-  .about-collage{min-height:475px;max-height:475px}
-  .about-collage .about-focus{inset:0 0 0 23%}
-  .about-collage .about-watermark{inset:0 36% 0 0}
-  .about-collage .about-photo-accent{left:47%}
-}
-@media(max-width:470px){.hero-collage{min-height:390px;height:390px}.about-collage{min-height:425px;max-height:425px}.about-collage .photo-note{font-size:23px;padding-bottom:25px}}
-@media(prefers-reduced-motion:reduce){.hero-collage,.about-collage{scroll-behavior:auto}}
 
-
-/* V4 — unobstructed hero portraits with subdued monochrome memories behind. */
-.hero-collage{position:relative;isolation:isolate;min-height:655px;background:#071629;overflow:hidden}
-.hero-collage .hero-watermark{left:0;width:68%;opacity:.68;filter:grayscale(1) contrast(1.1) sepia(.35) hue-rotate(170deg) saturate(1.5)}
-.hero-collage .hero-watermark-top{top:0;height:52%;clip-path:polygon(0 0,100% 0,100% 95%,0 100%)}
-.hero-collage .hero-watermark-bottom{top:48%;height:52%;clip-path:polygon(0 8%,100% 0,100% 100%,0 100%)}
-.hero-collage .hero-watermark:after{content:'';position:absolute;inset:0;background:#08274a66;mix-blend-mode:multiply}
-.hero-collage .hero-photo{
-  inset:0 -2% 0 28%;z-index:2;clip-path:none;
-  -webkit-mask-image:linear-gradient(to right,transparent 0%,#000 21%,#000 100%);
-  mask-image:linear-gradient(to right,transparent 0%,#000 21%,#000 100%);
+/* V5 — EXACT user-supplied full-width photographic backgrounds.
+   The text lives as real, accessible HTML on the clear left side.
+   No diagonal lines or shapes are drawn over the runner. */
+.hero {
+  background: #06182f url("assets/hero-segment.png") center center/cover no-repeat;
+  isolation:isolate;
 }
-.hero-collage .hero-photo img{object-fit:cover;object-position:50% 22%;filter:saturate(1.08) contrast(1.04)}
-.hero-collage:after{pointer-events:none;z-index:3;background:linear-gradient(to top,#071629af 0%,transparent 17%)}
-.hero-slice{display:none!important}
-/* Architectural accents stay on outer edges, never over a person. */
-.hero-collage:before{content:'';position:absolute;left:0;bottom:0;width:56%;height:5px;background:linear-gradient(90deg,#1087f2,#0ec6f4);z-index:5;transform:none}
-.about-collage{position:relative;isolation:isolate;min-height:620px;overflow:hidden;background:#08203b}
-.about-collage .about-watermark{inset:0 38% 0 0;z-index:0;opacity:.72;filter:grayscale(1) contrast(1.05) sepia(.33) hue-rotate(172deg)}
-.about-collage .about-focus{
-  inset:0 -1% 0 26%;z-index:1;clip-path:none;
-  -webkit-mask-image:linear-gradient(to right,transparent 0%,#000 24%,#000 100%);
-  mask-image:linear-gradient(to right,transparent 0%,#000 24%,#000 100%);
+.hero-glow{display:none!important}
+.hero-grid{display:block;min-height:clamp(650px,55vw,815px)}
+.hero-copy{position:relative;z-index:1;width:min(52%,610px);padding:clamp(74px,7vw,120px) 0 65px;text-shadow:0 2px 16px rgba(0,7,21,.65)}
+.hero h1{font-size:clamp(68px,7.5vw,115px)}
+.hero-description{color:#e1efff}
+.mini-stats{margin-top:44px}
+.mini-stats span{color:#d5e8fd}
+.about-banner{
+  background:#06182f url("assets/coach-segment.png") center center/cover no-repeat;
+  padding:100px 0;
+  isolation:isolate;
 }
-.about-collage .about-focus img{width:100%;height:100%;object-fit:cover;object-position:50% 8%}
-.about-collage .about-photo-accent{display:none!important}
-.about-collage .photo-note{z-index:4;max-width:100%;padding:74px 24px 24px;font-size:clamp(20px,2.5vw,28px);background:linear-gradient(transparent,#061629f2 65%)}
-.about-collage:after{content:'';position:absolute;bottom:0;right:0;width:31%;height:5px;background:linear-gradient(90deg,#0996fc,#04c3ed);z-index:5}
-@media(max-width:720px){
- .hero-collage{min-height:460px;height:460px}
- .hero-collage .hero-photo{inset:0 -2% 0 24%}
- .hero-collage .hero-watermark{width:73%}
- .hero-collage .hero-photo img{object-position:50% 20%}
- .about-collage{min-height:480px;max-height:480px}
- .about-collage .about-focus{inset:0 -1% 0 20%}
- .about-collage .about-watermark{inset:0 35% 0 0}
+.about-banner .split-grid{display:block;min-height:clamp(660px,52vw,820px)}
+.about-banner .split-grid>.reveal{width:min(52%,570px);position:relative;z-index:1;text-shadow:0 2px 13px rgba(0,8,22,.5)}
+.about-banner p{color:#e5f1ff}
+.about-banner .stat-grid div{background:rgba(6,25,49,.78);backdrop-filter:blur(3px)}
+.about-banner .stat-grid small{color:#ebf7ff}
+@media(min-width:1250px){.hero-grid,.about-banner .split-grid{width:min(1260px,calc(100% - 100px))}}
+/* On phones keep the image readable, rather than covering the runner with text. */
+@media(max-width:800px){
+  .hero{background-size:100% auto;background-position:center top;background-color:#06182f}
+  .hero-grid{min-height:0;padding-top:clamp(230px,54vw,430px)}
+  .hero-copy{width:100%;padding:34px 0 52px;background:linear-gradient(180deg,#06182f,#06182fe8);text-shadow:none}
+  .hero h1{font-size:clamp(60px,13vw,90px)}
+  .hero-description{max-width:600px}
+  .mini-stats{margin-top:34px}
+  .about-banner{background-size:100% auto;background-position:center top;padding:clamp(230px,54vw,430px) 0 70px}
+  .about-banner .split-grid{min-height:0}
+  .about-banner .split-grid>.reveal{width:100%;max-width:670px;background:linear-gradient(180deg,#06182f,#06182fdc);padding:25px 0 0;text-shadow:none}
 }
 @media(max-width:470px){
- .hero-collage{min-height:410px;height:410px}
- .hero-collage .hero-photo{inset:0 -3% 0 21%}
- .about-collage{min-height:435px;max-height:435px}
- .about-collage .about-focus{inset:0 -1% 0 18%}
- .about-collage .photo-note{font-size:21px;padding-bottom:24px}
+ .hero-grid{padding-top:54vw}.hero-copy{padding:22px 0 42px}
+ .hero h1{font-size:clamp(49px,13.5vw,72px)}
+ .hero-tagline{font-size:16px}
+ .about-banner{padding-top:54vw}
+ .about-banner .stat-grid div{padding:15px 12px}
 }
